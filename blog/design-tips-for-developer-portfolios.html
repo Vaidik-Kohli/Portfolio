@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design Tips for Developer Portfolios — Vaidik</title>
+    <meta name="description" content="What I learned about making a developer portfolio that stands out — from color theory and typography to layout and user experience.">
+
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar scrolled" id="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-logo">
+                <span class="logo-bracket">&lt;</span>Vaidik<span class="logo-bracket"> /&gt;</span>
+            </a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="../index.html#about" class="nav-link">About</a></li>
+                <li><a href="../index.html#skills" class="nav-link">Skills</a></li>
+                <li><a href="../index.html#projects" class="nav-link">Projects</a></li>
+                <li><a href="../blog.html" class="nav-link active">Blog</a></li>
+                <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
+                <li>
+                    <a href="../assets/resume.pdf" class="nav-resume-btn" target="_blank" rel="noopener noreferrer">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                        Resume
+                    </a>
+                </li>
+            </ul>
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- BLOG POST -->
+    <article class="blog-post">
+        <div class="container blog-post-container">
+
+            <header class="blog-post-header fade-up">
+                <a href="../blog.html" class="back-link">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+                    All Posts
+                </a>
+                <div class="blog-post-meta">
+                    <time datetime="2026-03-01">March 1, 2026</time>
+                    <span class="blog-meta-sep">&bull;</span>
+                    <span>4 min read</span>
+                </div>
+                <h1 class="blog-post-title">Design Tips for Developer Portfolios</h1>
+                <div class="blog-tags">
+                    <span class="blog-tag">Design</span>
+                    <span class="blog-tag">Portfolio</span>
+                    <span class="blog-tag">UI/UX</span>
+                </div>
+            </header>
+
+            <div class="blog-post-body fade-up">
+                <p class="blog-post-lead">
+                    Your portfolio is often the first impression you make. Here's what I've learned
+                    about designing one that actually stands out — without being a professional designer.
+                </p>
+
+                <h2>1. Less Is More</h2>
+                <p>
+                    The biggest mistake I see in developer portfolios is trying to show everything at once.
+                    Flashy animations, multiple fonts, rainbow colors — it all competes for attention and
+                    ends up feeling chaotic. The best portfolios are clean, focused, and breathable.
+                </p>
+                <p>
+                    Give your content room. White space (or in our case, dark space) isn't empty — it's
+                    intentional. It directs the viewer's eye and makes your content easier to digest.
+                </p>
+
+                <h2>2. Pick a Color System and Stick With It</h2>
+                <p>You don't need ten colors. You need:</p>
+                <ul>
+                    <li>A <strong>background color</strong> (dark or light)</li>
+                    <li>A <strong>primary text color</strong> for headings</li>
+                    <li>A <strong>secondary text color</strong> for body text</li>
+                    <li>An <strong>accent color</strong> (or gradient) for CTAs, links, and highlights</li>
+                </ul>
+                <p>
+                    That's it. Four colors can carry an entire portfolio. Use CSS custom properties so you
+                    can tweak everything from one place.
+                </p>
+
+                <h2>3. Typography Hierarchy Matters</h2>
+                <p>
+                    Pick one font family with multiple weights. I use Inter — it's clean, modern, and has
+                    weights from 300 to 800. Then establish a clear hierarchy:
+                </p>
+                <ul>
+                    <li><strong>Hero heading:</strong> Large, bold (700-800 weight)</li>
+                    <li><strong>Section headings:</strong> Medium, semi-bold (600-700)</li>
+                    <li><strong>Body text:</strong> Regular weight (400), generous line-height (1.7+)</li>
+                    <li><strong>Small text:</strong> Lighter (300-400), muted color</li>
+                </ul>
+
+                <blockquote>
+                    "Good typography is invisible. Bad typography is everywhere."
+                    — Oliver Reichenstein
+                </blockquote>
+
+                <h2>4. Animate With Purpose</h2>
+                <p>
+                    Animations should guide attention, not distract from it. A simple fade-up on scroll is
+                    more effective than a 3D rotating card that takes 2 seconds to settle. I use
+                    IntersectionObserver with a subtle <code>translateY</code> and <code>opacity</code>
+                    transition — it's lightweight, smooth, and doesn't annoy visitors.
+                </p>
+
+                <h2>5. Mobile First, Always</h2>
+                <p>
+                    More than half of web traffic is mobile. If your portfolio doesn't look good on a phone,
+                    you're losing visitors. Start designing for small screens, then scale up. A hamburger menu,
+                    single-column layouts, and properly sized touch targets are non-negotiable.
+                </p>
+
+                <h2>Final Thought</h2>
+                <p>
+                    Your portfolio doesn't need to be perfect. It needs to be <em>yours</em>. Show your
+                    personality, demonstrate your skills, and make it easy for someone to get in touch.
+                    That's what matters.
+                </p>
+            </div>
+
+            <footer class="blog-post-footer fade-up">
+                <div class="blog-post-author">
+                    <div class="blog-post-author-avatar">V</div>
+                    <div>
+                        <p class="blog-post-author-name">Vaidik</p>
+                        <p class="blog-post-author-bio">Student, Developer, Designer from Amritsar, India</p>
+                    </div>
+                </div>
+                <div class="blog-post-nav">
+                    <a href="my-journey-into-web-development.html" class="blog-post-nav-prev">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+                        <span class="blog-post-nav-label">Previous Post</span>
+                        <span class="blog-post-nav-title">My Journey Into Web Development</span>
+                    </a>
+                    <a href="preparing-for-bits-pilani.html" class="blog-post-nav-next">
+                        <span class="blog-post-nav-label">Next Post</span>
+                        <span class="blog-post-nav-title">Preparing for BITS Pilani</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                    </a>
+                </div>
+            </footer>
+        </div>
+    </article>
+
+    <footer class="footer">
+        <div class="container">
+            <p class="footer-text">Designed & Built by <strong>Vaidik</strong> &copy; 2026</p>
+            <div class="footer-socials">
+                <a href="https://github.com/Vaidik-Kohli" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg></a>
+                <a href="https://instagram.com/vaidikkohli9" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+                <a href="mailto:vaidikaru2323@gmail.com" aria-label="Email"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>
