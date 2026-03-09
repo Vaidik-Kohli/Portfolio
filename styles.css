@@ -1469,6 +1469,15 @@ button {
     flex-shrink: 0;
 }
 
+.nav-prev a,
+.nav-next a {
+  display: none; /* hidden by default */
+}
+.nav-prev a[href],
+.nav-next a[href] {
+  display: block; /* show only when a link exists */
+}
+
 /* ---- Responsive for blog pages ---- */
 @media (max-width: 768px) {
     .blog-page-hero {
