@@ -172,34 +172,38 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ==========================================
-    // 7. CONTACT FORM — Basic handler
+    // 7. CONTACT FORM — mailto handler
     // ==========================================
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
         contactForm.addEventListener('submit', (e) => {
-            // If using Formspree, let the form submit naturally
-            // For now, show a basic feedback message
-            const action = contactForm.getAttribute('action');
+            e.preventDefault();
 
-            // If it's still the placeholder action, prevent submission
-            if (action.includes('your-form-id')) {
-                e.preventDefault();
+            const name = contactForm.querySelector('#name').value.trim();
+            const email = contactForm.querySelector('#email').value.trim();
+            const message = contactForm.querySelector('#message').value.trim();
 
-                const btn = contactForm.querySelector('.btn-submit');
-                const originalHTML = btn.innerHTML;
+            const subject = encodeURIComponent(`Portfolio Contact from ${name}`);
+            const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`);
+            const mailtoLink = `mailto:vaidikaru2323@gmail.com?subject=${subject}&body=${body}`;
 
-                btn.innerHTML = `
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                    Message Sent!
-                `;
-                btn.style.background = 'linear-gradient(135deg, #059669, #10b981)';
+            window.location.href = mailtoLink;
 
-                setTimeout(() => {
-                    btn.innerHTML = originalHTML;
-                    btn.style.background = '';
-                    contactForm.reset();
-                }, 3000);
-            }
+            // Visual feedback
+            const btn = contactForm.querySelector('.btn-submit');
+            const originalHTML = btn.innerHTML;
+
+            btn.innerHTML = `
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                Opening Mail Client!
+            `;
+            btn.style.background = 'linear-gradient(135deg, #059669, #10b981)';
+
+            setTimeout(() => {
+                btn.innerHTML = originalHTML;
+                btn.style.background = '';
+                contactForm.reset();
+            }, 3000);
         });
     }
 
