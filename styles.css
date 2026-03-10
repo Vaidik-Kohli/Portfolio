@@ -1817,90 +1817,128 @@ button {
 /* ==========================================
    GITHUB ACTIVITY
    ========================================== */
-.github-profile {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
+.github-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 20px;
 }
 
-.github-profile-card {
-    display: flex;
-    gap: 24px;
-    padding: 28px;
+.github-card {
     background: var(--bg-card);
     border: 1px solid var(--border-subtle);
     border-radius: var(--radius-lg);
+    padding: 24px;
     transition: all var(--transition-med);
 }
 
-.github-profile-card:hover {
+.github-card:hover {
     border-color: var(--border-hover);
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
 }
 
-.github-avatar {
-    flex-shrink: 0;
+.github-card-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text-muted);
+    margin-bottom: 16px;
+}
+
+.github-card-title svg {
+    color: var(--accent-1);
+}
+
+/* Profile Card — centered */
+.github-profile-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    gap: 4px;
 }
 
 .github-avatar img {
-    width: 80px;
-    height: 80px;
+    width: 56px;
+    height: 56px;
     border-radius: 50%;
     border: 2px solid var(--border-subtle);
+    margin-bottom: 8px;
 }
 
-.github-info {
-    flex: 1;
-}
-
-.github-info h3 {
-    font-size: 1.2rem;
+.github-profile-card h3 {
+    font-size: 1.05rem;
     font-weight: 700;
     color: var(--text-primary);
     margin-bottom: 4px;
 }
 
-.github-info > p {
-    font-size: 0.85rem;
+.github-bio {
+    font-size: 0.8rem;
     color: var(--text-secondary);
+    line-height: 1.5;
     margin-bottom: 16px;
 }
 
+.github-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.8rem;
+    padding: 8px 18px;
+}
+
+/* Repos Card */
 .github-repos-list {
     display: flex;
     flex-direction: column;
-    gap: 8px;
-    margin-bottom: 20px;
+    gap: 10px;
 }
 
 .github-repo-item {
     display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 8px 12px;
+    flex-direction: column;
+    gap: 6px;
+    padding: 14px 16px;
     background: var(--bg-tertiary);
     border: 1px solid var(--border-subtle);
     border-radius: var(--radius-md, 8px);
     color: var(--text-secondary);
-    font-size: 0.8rem;
     text-decoration: none;
     transition: all var(--transition-fast);
 }
 
 .github-repo-item:hover {
-    color: var(--accent-1);
     border-color: var(--accent-1);
     background: rgba(99, 102, 241, 0.05);
 }
 
-.github-repo-item svg {
-    color: var(--text-muted);
-    flex-shrink: 0;
+.repo-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
 }
 
 .repo-name {
+    font-size: 0.9rem;
     font-weight: 600;
-    flex: 1;
+    color: var(--text-primary);
+}
+
+.github-repo-item:hover .repo-name {
+    color: var(--accent-1);
+}
+
+.repo-desc {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    line-height: 1.4;
+    margin: 0;
 }
 
 .repo-lang {
@@ -1909,6 +1947,7 @@ button {
     gap: 4px;
     font-size: 0.7rem;
     color: var(--text-muted);
+    white-space: nowrap;
 }
 
 .lang-dot {
@@ -1923,24 +1962,13 @@ button {
 .lang-dot.javascript { background: #f1e05a; }
 .lang-dot.css { background: #563d7c; }
 
-.github-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
+/* Graph Card — full width bottom */
+.github-graph-card {
+    grid-column: 1 / -1;
 }
 
 .github-contribution-graph {
-    background: var(--bg-card);
-    border: 1px solid var(--border-subtle);
-    border-radius: var(--radius-lg);
-    padding: 20px;
     overflow-x: auto;
-    transition: all var(--transition-med);
-}
-
-.github-contribution-graph:hover {
-    border-color: var(--border-hover);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
 }
 
 .github-contribution-graph img {
@@ -1948,6 +1976,12 @@ button {
     height: auto;
     display: block;
     filter: brightness(1.1);
+}
+
+@media (max-width: 768px) {
+    .github-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 @media (max-width: 768px) {
