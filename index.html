@@ -3,679 +3,777 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vaidik — Student | Developer | Designer</title>
-    <meta name="description" content="Vaidik Kohli — 16-year-old student, developer, and designer from Amritsar, India. Aspiring full-stack developer preparing for BITS Goa CSE 2028.">
-    <meta name="author" content="Vaidik Kohli">
-
-    <!-- Open Graph -->
-    <meta property="og:title" content="Vaidik — Student | Developer | Designer">
-    <meta property="og:description" content="Portfolio of Vaidik Kohli — Student, Developer, and Designer from Amritsar, India.">
+    <title>Vaidik | Portfolio</title>
+    <meta name="description" content="Vaidik is a 16-year-old developer from Amritsar, India, building Python and web projects from scratch.">
+    <meta name="author" content="Vaidik">
+    <meta property="og:title" content="Vaidik | Portfolio">
+    <meta property="og:description" content="Personal portfolio of Vaidik from Amritsar, India.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://vaidik-kohli.github.io/Portfolio/">
+    <meta property="og:url" content="https://vaidik-kohli.github.io/">
 
-    <!-- Favicon -->
-    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        :root {
+            --bg: #11100e;
+            --surface: #171512;
+            --text: #eee8dc;
+            --muted: #b9ad98;
+            --line: #2c271f;
+            --accent: #c39a68;
+            --max: 1120px;
+            --radius: 14px;
+            --shadow: 0 18px 40px rgba(0, 0, 0, 0.25);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Manrope", sans-serif;
+            background: radial-gradient(circle at 85% 8%, #1d1914 0%, var(--bg) 45%);
+            color: var(--text);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
+            width: min(92%, var(--max));
+            margin-inline: auto;
+        }
+
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(8px);
+            background: color-mix(in srgb, var(--bg) 86%, transparent);
+            border-bottom: 1px solid color-mix(in srgb, var(--line) 80%, transparent);
+        }
+
+        .nav-wrap {
+            min-height: 68px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+
+        .brand {
+            font-family: "Cormorant Garamond", serif;
+            font-size: clamp(1.5rem, 3vw, 1.9rem);
+            letter-spacing: 0.2px;
+            color: var(--text);
+            white-space: nowrap;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: clamp(0.45rem, 1.2vw, 1.2rem);
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+
+        .nav-links a {
+            font-size: 0.92rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: var(--muted);
+            padding: 0.35rem 0.25rem;
+            border-bottom: 1px solid transparent;
+            transition: color 0.24s ease, border-color 0.24s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--accent);
+            border-color: color-mix(in srgb, var(--accent) 78%, transparent);
+        }
+
+        main {
+            overflow: clip;
+        }
+
+        section {
+            padding: clamp(4.5rem, 8vw, 7rem) 0;
+            border-bottom: 1px solid color-mix(in srgb, var(--line) 75%, transparent);
+        }
+
+        .fade {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+
+        .fade.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .hero {
+            min-height: min(86vh, 760px);
+            display: grid;
+            align-items: center;
+            border-bottom: 1px solid color-mix(in srgb, var(--line) 70%, transparent);
+        }
+
+        .hero-inner {
+            display: grid;
+            grid-template-columns: 1.25fr 0.9fr;
+            gap: clamp(1.2rem, 4vw, 3.2rem);
+            align-items: end;
+        }
+
+        .kicker {
+            font-size: 0.87rem;
+            letter-spacing: 0.13em;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin-bottom: 0.65rem;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: "Cormorant Garamond", serif;
+            line-height: 1.08;
+            font-weight: 600;
+            letter-spacing: 0.1px;
+        }
+
+        h1 {
+            font-size: clamp(3rem, 9vw, 6.4rem);
+            margin-bottom: 0.95rem;
+        }
+
+        .hero-line {
+            font-size: clamp(1.15rem, 2.5vw, 1.5rem);
+            max-width: 34ch;
+            color: #e5dccd;
+        }
+
+        .hero-meta {
+            margin-top: 1.1rem;
+            color: var(--accent);
+            font-size: 0.96rem;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+
+        .hero-note {
+            background: color-mix(in srgb, var(--surface) 94%, #000 6%);
+            border: 1px solid color-mix(in srgb, var(--accent) 24%, var(--line));
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 1.3rem 1.2rem;
+            max-width: 380px;
+            justify-self: end;
+        }
+
+        .hero-note p {
+            font-size: 0.96rem;
+            color: #dbd2c4;
+        }
+
+        .hero-note p + p {
+            margin-top: 0.65rem;
+            color: var(--muted);
+        }
+
+        .section-head {
+            margin-bottom: clamp(1.4rem, 2.2vw, 2rem);
+        }
+
+        .section-head h2 {
+            font-size: clamp(2rem, 4vw, 3.15rem);
+        }
+
+        .section-head p {
+            margin-top: 0.4rem;
+            color: var(--muted);
+            max-width: 64ch;
+            font-size: 0.98rem;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+            gap: clamp(1rem, 3vw, 2.4rem);
+        }
+
+        .about-copy p {
+            max-width: 62ch;
+            color: #e7dfd2;
+            font-size: clamp(1rem, 1.35vw, 1.06rem);
+        }
+
+        .about-copy p + p {
+            margin-top: 1rem;
+        }
+
+        .about-facts {
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            background: color-mix(in srgb, var(--surface) 92%, #000 8%);
+            padding: 1rem 1.1rem;
+            align-self: start;
+        }
+
+        .about-facts ul {
+            list-style: none;
+            display: grid;
+            gap: 0.62rem;
+        }
+
+        .about-facts li {
+            color: #dbcdb8;
+            font-size: 0.95rem;
+            border-bottom: 1px solid color-mix(in srgb, var(--line) 72%, transparent);
+            padding-bottom: 0.52rem;
+        }
+
+        .about-facts li:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .projects-wrap {
+            display: grid;
+            gap: 1.35rem;
+        }
+
+        .project {
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            padding: clamp(1rem, 2.6vw, 1.65rem);
+            background: color-mix(in srgb, var(--surface) 94%, #000 6%);
+        }
+
+        .project-title-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 0.65rem;
+        }
+
+        .project h3 {
+            font-size: clamp(1.6rem, 2.7vw, 2.25rem);
+        }
+
+        .stack {
+            font-size: 0.84rem;
+            color: var(--accent);
+            letter-spacing: 0.09em;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .project p {
+            max-width: 70ch;
+            color: #ded3c2;
+        }
+
+        .project p + p {
+            margin-top: 0.75rem;
+        }
+
+        .project-links {
+            margin-top: 1rem;
+            display: flex;
+            gap: 0.95rem;
+            flex-wrap: wrap;
+        }
+
+        .link-btn {
+            border: 1px solid color-mix(in srgb, var(--accent) 32%, var(--line));
+            color: #e7dccb;
+            font-size: 0.9rem;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            padding: 0.55rem 0.75rem;
+            border-radius: 999px;
+            transition: background-color 0.24s ease, border-color 0.24s ease, color 0.24s ease;
+        }
+
+        .link-btn:hover {
+            background: color-mix(in srgb, var(--accent) 16%, transparent);
+            border-color: color-mix(in srgb, var(--accent) 62%, transparent);
+            color: #f6eddc;
+        }
+
+        .github-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+            gap: clamp(1rem, 3vw, 2rem);
+            align-items: start;
+        }
+
+        .github-card,
+        .graph-wrap {
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            background: color-mix(in srgb, var(--surface) 94%, #000 6%);
+            padding: 1rem;
+        }
+
+        .github-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 0.45rem;
+        }
+
+        .github-card p {
+            color: #ddcfbc;
+            margin-bottom: 0.8rem;
+        }
+
+        .graph-wrap img {
+            width: 100%;
+            border-radius: 8px;
+            border: 1px solid color-mix(in srgb, var(--accent) 30%, var(--line));
+            background: #151311;
+            filter: sepia(0.26) saturate(0.72) hue-rotate(-8deg);
+        }
+
+        .blog-list {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .blog-item {
+            display: grid;
+            grid-template-columns: 145px minmax(0, 1fr);
+            gap: 1rem;
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            background: color-mix(in srgb, var(--surface) 94%, #000 6%);
+            padding: 1rem;
+        }
+
+        .blog-date {
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            font-size: 0.82rem;
+            font-weight: 700;
+            align-self: start;
+        }
+
+        .blog-item h3 {
+            font-size: clamp(1.35rem, 2.1vw, 1.8rem);
+            margin-bottom: 0.42rem;
+        }
+
+        .blog-item p {
+            color: #ddcfbc;
+            margin-bottom: 0.8rem;
+        }
+
+        .read-link {
+            color: #ecdcc4;
+            border-bottom: 1px solid color-mix(in srgb, var(--accent) 58%, transparent);
+            transition: color 0.22s ease;
+        }
+
+        .read-link:hover {
+            color: var(--accent);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+            gap: clamp(1.1rem, 3vw, 2rem);
+        }
+
+        .contact-copy p {
+            max-width: 48ch;
+            color: #dfd2bf;
+        }
+
+        .contact-links {
+            margin-top: 1rem;
+            display: grid;
+            gap: 0.5rem;
+        }
+
+        .contact-links a {
+            color: #ecdfca;
+            width: fit-content;
+            border-bottom: 1px solid color-mix(in srgb, var(--accent) 40%, transparent);
+        }
+
+        form {
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            background: color-mix(in srgb, var(--surface) 95%, #000 5%);
+            padding: 1rem;
+        }
+
+        .field {
+            margin-bottom: 0.78rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.36rem;
+            color: #d8c9b4;
+            font-size: 0.9rem;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            border: 1px solid color-mix(in srgb, var(--line) 88%, transparent);
+            background: #141210;
+            color: var(--text);
+            border-radius: 10px;
+            padding: 0.72rem 0.8rem;
+            font: inherit;
+        }
+
+        textarea {
+            min-height: 130px;
+            resize: vertical;
+        }
+
+        input:focus,
+        textarea:focus {
+            outline: none;
+            border-color: color-mix(in srgb, var(--accent) 78%, transparent);
+            box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 18%, transparent);
+        }
+
+        .send {
+            width: 100%;
+            border: 1px solid color-mix(in srgb, var(--accent) 50%, transparent);
+            border-radius: 10px;
+            background: color-mix(in srgb, var(--accent) 16%, transparent);
+            color: #f4ead8;
+            padding: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: background-color 0.24s ease, border-color 0.24s ease;
+        }
+
+        .send:hover {
+            background: color-mix(in srgb, var(--accent) 24%, transparent);
+            border-color: color-mix(in srgb, var(--accent) 76%, transparent);
+        }
+
+        .site-footer {
+            padding: 1.6rem 0 2.4rem;
+            color: var(--muted);
+            font-size: 0.88rem;
+        }
+
+        .site-footer .container {
+            display: flex;
+            justify-content: space-between;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        @media (max-width: 960px) {
+            .hero-inner,
+            .about-grid,
+            .github-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-note {
+                justify-self: start;
+            }
+
+            .blog-item {
+                grid-template-columns: 1fr;
+                gap: 0.35rem;
+            }
+
+            .blog-date {
+                font-size: 0.76rem;
+            }
+        }
+
+        @media (max-width: 680px) {
+            .site-header {
+                position: static;
+            }
+
+            .nav-wrap {
+                min-height: auto;
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 0.9rem 0;
+            }
+
+            .nav-links {
+                width: 100%;
+                justify-content: flex-start;
+            }
+
+            section {
+                padding: 3.5rem 0;
+            }
+
+            .hero {
+                min-height: auto;
+                padding-top: 2.1rem;
+                padding-bottom: 3.1rem;
+            }
+        }
+    </style>
 </head>
 <body>
-
-    <!-- ========== NAVBAR ========== -->
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <a href="#hero" class="nav-logo">
-                <span class="logo-bracket">&lt;</span>Vaidik<span class="logo-bracket"> /&gt;</span>
-            </a>
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#skills" class="nav-link">Skills</a></li>
-                <li><a href="#projects" class="nav-link">Projects</a></li>
-                <li><a href="#buildlog" class="nav-link">Build Log</a></li>
-                <li><a href="#blog" class="nav-link">Blog</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
-                <li>
-                    <a href="assets/resume.pdf" class="nav-resume-btn" target="_blank" rel="noopener noreferrer">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                        Resume
-                    </a>
-                </li>
-            </ul>
-            <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </button>
+    <header class="site-header">
+        <div class="container nav-wrap">
+            <a class="brand" href="#top">Vaidik</a>
+            <nav aria-label="Primary">
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="https://vaidik-kohli.github.io/assets/resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a></li>
+                </ul>
+            </nav>
         </div>
-    </nav>
+    </header>
 
-    <!-- ========== HERO ========== -->
-    <section class="hero" id="hero">
-        <div class="hero-content">
-            <p class="hero-greeting fade-up">Hey there, I'm</p>
-            <h1 class="hero-name fade-up">Vaidik<span class="accent-dot">.</span></h1>
-            <p class="hero-tagline fade-up">
-                <span class="tagline-text">Student</span>
-                <span class="tagline-separator">|</span>
-                <span class="tagline-text">Developer</span>
-                <span class="tagline-separator">|</span>
-                <span class="tagline-text">Designer</span>
-            </p>
-            <p class="hero-location fade-up">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                Amritsar, India
-            </p>
-            <div class="hero-cta fade-up">
-                <a href="#projects" class="btn btn-primary">View My Work</a>
-                <a href="#contact" class="btn btn-outline">Get In Touch</a>
+    <main id="top">
+        <section class="hero">
+            <div class="container hero-inner fade">
+                <div>
+                    <p class="kicker">Personal Portfolio</p>
+                    <h1>Vaidik</h1>
+                    <p class="hero-line">I like building things that feel alive, from game mechanics in Python to pages that read like a person made them.</p>
+                    <p class="hero-meta">Amritsar, India</p>
+                </div>
+                <aside class="hero-note">
+                    <p>I am 16, self-taught, and I care a lot about craft. I write code, break it, fix it, and keep shipping.</p>
+                    <p>Current long-term target: BITS Pilani CSE 2028.</p>
+                </aside>
             </div>
-            <div class="hero-socials fade-up">
-                <a href="https://github.com/Vaidik-Kohli" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="social-link">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-                </a>
-                <a href="https://instagram.com/vaidikkohli9" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="social-link">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-                </a>
-                <a href="mailto:vaidikaru2323@gmail.com" aria-label="Email" class="social-link">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                </a>
+        </section>
+
+        <section id="about">
+            <div class="container about-grid fade">
+                <div class="about-copy">
+                    <div class="section-head">
+                        <h2>About</h2>
+                    </div>
+                    <p>I started with Python because I wanted to make something that moved on screen, not just print lines in a console. That led me into Pygame, then into web work when I wanted a place to document what I was building.</p>
+                    <p>Most of what I know comes from trial and error. I read docs, test ideas, and keep notes when a bad decision teaches me something useful. That habit helped me move faster than I expected.</p>
+                    <p>Outside code, I spend time on cricket, photography, and games. Those three shape how I think about timing, composition, and feedback loops in projects.</p>
+                </div>
+                <aside class="about-facts">
+                    <ul>
+                        <li>Primary stack: Python, Pygame, HTML, CSS, JavaScript</li>
+                        <li>Tools: Git, Figma, Canva, Photoshop</li>
+                        <li>Focus: projects that feel complete, not half demos</li>
+                        <li>Location: Amritsar, Punjab, India</li>
+                    </ul>
+                </aside>
             </div>
-        </div>
+        </section>
 
-        <!-- Decorative background elements -->
-        <div class="hero-bg-glow"></div>
-        <div class="hero-grid-pattern"></div>
-    </section>
-
-    <!-- ========== ABOUT ========== -->
-    <section class="section" id="about">
-        <div class="container">
-            <h2 class="section-title fade-up">
-                <span class="section-number">01.</span> About Me
-            </h2>
-            <div class="about-content">
-                <div class="about-text fade-up">
-                    <p>
-                        I'm <strong>Vaidik</strong>, a 16-year-old from <strong>Amritsar, India</strong> who loves 
-                        building things from scratch. Whether it's a game in Python, a website in HTML/CSS, or a 
-                        design in Figma; I enjoy the entire process of going from idea to something real.
-                    </p>
-                    <p>
-                        Right now I'm diving deeper into <strong>Python</strong> and preparing for 
-                        <strong>BITS Pilani Goa, CSE 2028</strong>. I'm drawn to game development, creative coding, 
-                        and visual design. My goal is to keep shipping projects, learn by doing, and build a track 
-                        record of things I've actually made.
-                    </p>
-                    <p>
-                        Outside of code, you'll find me playing <strong>cricket</strong>, shooting 
-                        <strong>photography</strong>, or deep in a <strong>gaming</strong> session. I'm always up 
-                        for collaborations and freelance work, let's build something cool!
-                    </p>
+        <section id="projects">
+            <div class="container fade">
+                <div class="section-head">
+                    <h2>Projects</h2>
+                    <p>Two builds that took real iteration, not one-night prototypes.</p>
                 </div>
-                <div class="about-highlights fade-up">
-                    <div class="highlight-card">
-                        <span class="highlight-icon">🎓</span>
-                        <span class="highlight-label">Aspiring</span>
-                        <span class="highlight-value">BITS Goa CSE '28</span>
-                    </div>
-                    <div class="highlight-card">
-                        <span class="highlight-icon">💼</span>
-                        <span class="highlight-label">Currently</span>
-                        <span class="highlight-value">Freelancing</span>
-                    </div>
-                    <div class="highlight-card">
-                        <span class="highlight-icon">📍</span>
-                        <span class="highlight-label">Based in</span>
-                        <span class="highlight-value">Amritsar, India</span>
-                    </div>
-                    <div class="highlight-card">
-                        <span class="highlight-icon">🎂</span>
-                        <span class="highlight-label">Age</span>
-                        <span class="highlight-value">16 years old</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ========== SKILLS WITH EVIDENCE ========== -->
-    <section class="section section-alt" id="skills">
-        <div class="container">
-            <h2 class="section-title fade-up">
-                <span class="section-number">02.</span> Skills & Evidence
-            </h2>
-            <p class="section-subtitle fade-up">Not just a list, here's where I've actually used them.</p>
-            <div class="skills-grid">
-                <div class="skill-category fade-up">
-                    <div class="skill-category-header">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-                        <h3>Development</h3>
-                    </div>
-                    <div class="skill-tags">
-                        <div class="skill-tag-with-evidence">
-                            <span class="skill-tag">Python</span>
-                            <span class="skill-evidence">Built Slot Machine Game with Pygame</span>
+                <div class="projects-wrap">
+                    <article class="project">
+                        <div class="project-title-row">
+                            <h3>Slot Machine Game</h3>
+                            <span class="stack">Python • Pygame</span>
                         </div>
-                        <div class="skill-tag-with-evidence">
-                            <span class="skill-tag">Pygame</span>
-                            <span class="skill-evidence">Game engine for Slot Machine; animations, audio, UI</span>
-                        </div>
-                        <div class="skill-tag-with-evidence">
-                            <span class="skill-tag">HTML</span>
-                            <span class="skill-evidence">Built this portfolio site from scratch</span>
-                        </div>
-                        <div class="skill-tag-with-evidence">
-                            <span class="skill-tag">CSS</span>
-                            <span class="skill-evidence">Custom dark theme, responsive grid layouts, animations</span>
-                        </div>
-                        <div class="skill-tag-with-evidence">
-                            <span class="skill-tag">JavaScript</span>
-                            <span class="skill-evidence">Portfolio interactivity; typing effect, scroll animations, form handling</span>
-                        </div>
-                        <div class="skill-tag-with-evidence">
-                            <span class="skill-tag">Git</span>
-                            <span class="skill-evidence">Version control for all projects, deployed via GitHub Pages</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="skill-category fade-up">
-                    <div class="skill-category-header">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>
-                        <h3>Design</h3>
-                    </div>
-                    <div class="skill-tags">
-                        <div class="skill-tag-with-evidence">
-                            <span class="skill-tag">Figma</span>
-                            <span class="skill-evidence">UI mockups and prototyping for projects</span>
-                        </div>
-                        <div class="skill-tag-with-evidence">
-                            <span class="skill-tag">Canva</span>
-                            <span class="skill-evidence">Social media graphics and quick designs</span>
-                        </div>
-                        <div class="skill-tag-with-evidence">
-                            <span class="skill-tag">Photoshop</span>
-                            <span class="skill-evidence">Photo editing and asset creation</span>
-                        </div>
-                        <div class="skill-tag-with-evidence">
-                            <span class="skill-tag">UI/UX</span>
-                            <span class="skill-evidence">Portfolio design; layout, typography, color system</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="skill-category fade-up">
-                    <div class="skill-category-header">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-                        <h3>Other</h3>
-                    </div>
-                    <div class="skill-tags">
-                        <div class="skill-tag-with-evidence">
-                            <span class="skill-tag">Freelancing</span>
-                            <span class="skill-evidence">Taking on design and development projects</span>
-                        </div>
-                        <div class="skill-tag-with-evidence">
-                            <span class="skill-tag">Photography</span>
-                            <span class="skill-evidence">Landscape and portrait photography hobby</span>
-                        </div>
-                        <div class="skill-tag-with-evidence">
-                            <span class="skill-tag">Game Dev</span>
-                            <span class="skill-evidence">Published first game on itch.io</span>
-                        </div>
-                        <div class="skill-tag-with-evidence">
-                            <span class="skill-tag">Problem Solving</span>
-                            <span class="skill-evidence">BITSAT prep; logic, math, and analytical thinking</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ========== THINGS I BUILT ========== -->
-    <section class="section" id="projects">
-        <div class="container">
-            <h2 class="section-title fade-up">
-                <span class="section-number">03.</span> Things I Built
-            </h2>
-            <p class="section-subtitle fade-up">Real projects with real problems, real code, and real lessons.</p>
-            <div class="projects-grid">
-                <!-- Project Card 1: Slot Machine Game -->
-                <article class="project-card project-card-featured fade-up">
-                    <div class="project-image">
-                        <div class="project-image-placeholder gradient-1">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><line x1="8" y1="4" x2="8" y2="20"/><line x1="16" y1="4" x2="16" y2="20"/><line x1="2" y1="12" x2="22" y2="12"/></svg>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <h3 class="project-title">🎰 Slot Machine Game</h3>
-                        <div class="project-breakdown">
-                            <div class="project-breakdown-item">
-                                <span class="breakdown-label">Problem</span>
-                                <p>Wanted to learn Python beyond tutorials; needed a real project with game logic, state management, and a GUI.</p>
-                            </div>
-                            <div class="project-breakdown-item">
-                                <span class="breakdown-label">What I Built</span>
-                                <p>A full slot machine game with 4 risk levels, jackpot system, 12 achievements, unlockable perks, an aura energy mechanic, particle effects, and sound. All in Pygame.</p>
-                            </div>
-                            <div class="project-breakdown-item">
-                                <span class="breakdown-label">What I Learned</span>
-                                <p>Game loops, event handling, state persistence with JSON, procedural sound generation, and how to scope and ship a complete project.</p>
-                            </div>
-                        </div>
-                        <div class="project-tech">
-                            <span>Python</span>
-                            <span>Pygame</span>
-                            <span>JSON</span>
-                        </div>
+                        <p>I made this to learn game architecture in a way tutorials never forced me to. The game has four risk levels, a jackpot system, 12 achievements, an aura mechanic, particle bursts, and sound cues that match the pace of each spin.</p>
+                        <p>The hard part was balancing reward and frustration so it felt fair. I rewrote parts of the random logic and state handling a few times before it stopped feeling noisy and started feeling intentional.</p>
                         <div class="project-links">
-                            <a href="https://github.com/Vaidik-Kohli/slot-machine-game" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="Source code">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-                                View Code
-                            </a>
+                            <a class="link-btn" href="https://github.com/Vaidik-Kohli/slot-machine-game" target="_blank" rel="noopener noreferrer">View Code</a>
                         </div>
-                    </div>
-                </article>
+                    </article>
 
-                <!-- Project Card 2: Portfolio Website -->
-                <article class="project-card fade-up">
-                    <div class="project-image">
-                        <div class="project-image-placeholder gradient-2">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                    <article class="project">
+                        <div class="project-title-row">
+                            <h3>Portfolio Website</h3>
+                            <span class="stack">HTML • CSS • JavaScript</span>
                         </div>
-                    </div>
-                    <div class="project-info">
-                        <h3 class="project-title">💻 Portfolio Website</h3>
-                        <div class="project-breakdown">
-                            <div class="project-breakdown-item">
-                                <span class="breakdown-label">Problem</span>
-                                <p>Needed a personal site to showcase my work, not just a GitHub profile.</p>
-                            </div>
-                            <div class="project-breakdown-item">
-                                <span class="breakdown-label">What I Built</span>
-                                <p>This portfolio; dark-themed, responsive, with scroll animations, a typing effect, blog system, and working contact form.</p>
-                            </div>
-                            <div class="project-breakdown-item">
-                                <span class="breakdown-label">What I Learned</span>
-                                <p>CSS Grid, IntersectionObserver API, responsive design, deploying with GitHub Pages, and design systems.</p>
-                            </div>
-                        </div>
-                        <div class="project-tech">
-                            <span>HTML</span>
-                            <span>CSS</span>
-                            <span>JavaScript</span>
-                        </div>
+                        <p>This site started as a simple page and got rebuilt when I realized it looked generic. I rebuilt the structure, tightened the spacing, and treated copy like product content instead of filler.</p>
+                        <p>Under the surface, I kept it clean and lightweight: responsive layout, smooth navigation, section reveal effects, and a blog setup that is easy to extend without adding a framework.</p>
                         <div class="project-links">
-                            <a href="https://vaidik-kohli.github.io/portfolio/" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="Live site">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                                Live Site
-                            </a>
-                            <a href="https://github.com/Vaidik-Kohli/Portfolio" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="Source code">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-                                Code
-                            </a>
+                            <a class="link-btn" href="https://github.com/Vaidik-Kohli/Portfolio" target="_blank" rel="noopener noreferrer">View Code</a>
                         </div>
-                    </div>
-                </article>
+                    </article>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- ========== CURRENTLY LEARNING ========== -->
-    <section class="section section-alt" id="learning">
-        <div class="container">
-            <h2 class="section-title fade-up">
-                <span class="section-number">04.</span> Currently Learning
-            </h2>
-            <p class="section-subtitle fade-up">What I'm actively studying right now; showing growth, not just a static list.</p>
-            <div class="learning-grid">
-                <div class="learning-card fade-up">
-                    <div class="learning-icon">🐍</div>
-                    <div class="learning-info">
-                        <h3>Python — Intermediate Topics</h3>
-                        <p>Going deeper into OOP, file handling, error handling, data structures, and libraries beyond the basics. Building more complex projects to solidify concepts.</p>
-                        <div class="learning-progress">
-                            <div class="progress-bar">
-                                <div class="progress-fill" style="width: 40%"></div>
-                            </div>
-                            <span class="progress-label">In Progress</span>
+        <section id="github">
+            <div class="container fade">
+                <div class="section-head">
+                    <h2>GitHub Activity</h2>
+                    <p>Public work and commit history.</p>
+                </div>
+                <div class="github-grid">
+                    <div class="github-card">
+                        <h3>Vaidik-Kohli</h3>
+                        <p>I push code often, then clean it after I see what breaks. You can find all project repositories and updates on my profile.</p>
+                        <a class="link-btn" href="https://github.com/Vaidik-Kohli" target="_blank" rel="noopener noreferrer">Open GitHub Profile</a>
+                    </div>
+                    <div class="graph-wrap">
+                        <img src="https://ghchart.rshah.org/Vaidik-Kohli" alt="GitHub contribution graph for Vaidik-Kohli" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="blog">
+            <div class="container fade">
+                <div class="section-head">
+                    <h2>Blog</h2>
+                    <p>Notes from what I build and how I think through decisions.</p>
+                </div>
+                <div class="blog-list">
+                    <article class="blog-item">
+                        <p class="blog-date">March 9, 2026</p>
+                        <div>
+                            <h3>My Journey Into Web Development</h3>
+                            <p>How I moved from simple Python scripts to front-end work, what helped, what wasted time, and what I would do first if I had to restart from zero.</p>
+                            <a class="read-link" href="https://vaidik-kohli.github.io/blog/my-journey-into-web-development.html" target="_blank" rel="noopener noreferrer">Read post</a>
                         </div>
-                    </div>
-                </div>
-                <div class="learning-card fade-up">
-                    <div class="learning-icon">📚</div>
-                    <div class="learning-info">
-                        <h3>BITSAT Concepts</h3>
-                        <p>Starting to explore the core concepts needed for BITSAT; Physics, Chemistry, Math, and Logical Reasoning. Building a strong foundation before mock tests.</p>
-                        <div class="learning-progress">
-                            <div class="progress-bar">
-                                <div class="progress-fill" style="width: 15%"></div>
-                            </div>
-                            <span class="progress-label">Just Starting</span>
+                    </article>
+                    <article class="blog-item">
+                        <p class="blog-date">March 1, 2026</p>
+                        <div>
+                            <h3>Design Tips for Developer Portfolios</h3>
+                            <p>The layout and writing choices that make a portfolio easier to trust, plus mistakes I made in my own first version.</p>
+                            <a class="read-link" href="https://vaidik-kohli.github.io/blog/design-tips-for-developer-portfolios.html" target="_blank" rel="noopener noreferrer">Read post</a>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ========== BUILD LOG ========== -->
-    <section class="section" id="buildlog">
-        <div class="container">
-            <h2 class="section-title fade-up">
-                <span class="section-number">05.</span> Build Log
-            </h2>
-            <p class="section-subtitle fade-up">A timeline of what I've been building; showing consistency and progress.</p>
-            <div class="timeline">
-                <div class="timeline-item fade-up">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">Dec 2025 – Jan 2026</div>
-                    <div class="timeline-content">
-                        <h3>Started Learning Python</h3>
-                        <p>Began my coding journey with Python — learned syntax, basic data types, control flow, functions, and started building small scripts to reinforce concepts.</p>
-                        <div class="timeline-tags">
-                            <span>Python</span>
-                            <span>Basics</span>
+                    </article>
+                    <article class="blog-item">
+                        <p class="blog-date">February 15, 2026</p>
+                        <div>
+                            <h3>Preparing for BITS Pilani, My Strategy</h3>
+                            <p>How I split time between coding and exam prep, the study plan that works for me, and where I cut distractions.</p>
+                            <a class="read-link" href="https://vaidik-kohli.github.io/blog/preparing-for-bits-pilani.html" target="_blank" rel="noopener noreferrer">Read post</a>
                         </div>
-                    </div>
-                </div>
-                <div class="timeline-item fade-up">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">Feb 2026</div>
-                    <div class="timeline-content">
-                        <h3>Built the Slot Machine Game</h3>
-                        <p>My first real project — a feature-rich slot machine with Pygame. Learned game loops, event handling, state management, and how to ship a complete product.</p>
-                        <div class="timeline-tags">
-                            <span>Python</span>
-                            <span>Pygame</span>
-                            <span>Game Dev</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="timeline-item fade-up">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">Mar 2026</div>
-                    <div class="timeline-content">
-                        <h3>Published Game & Built Portfolio</h3>
-                        <p>Published my first game on itch.io and built this portfolio website from scratch — learned HTML, CSS, JavaScript, responsive design, and deployment with GitHub Pages.</p>
-                        <div class="timeline-tags">
-                            <span>HTML</span>
-                            <span>CSS</span>
-                            <span>JavaScript</span>
-                            <span>itch.io</span>
-                        </div>
-                    </div>
+                    </article>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- ========== GOALS / ROADMAP ========== -->
-    <section class="section section-alt" id="goals">
-        <div class="container">
-            <h2 class="section-title fade-up">
-                <span class="section-number">06.</span> 2026 Roadmap
-            </h2>
-            <p class="section-subtitle fade-up">What I plan to build and learn this year — focus over randomness.</p>
-            <div class="goals-grid">
-                <div class="goal-card fade-up">
-                    <div class="goal-status">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        <section id="contact">
+            <div class="container contact-grid fade">
+                <div class="contact-copy">
+                    <div class="section-head">
+                        <h2>Contact</h2>
                     </div>
-                    <div class="goal-info">
-                        <h3>Master Python & HTML/CSS</h3>
-                        <p>Go from intermediate to confident — build complex projects, understand best practices, write clean code.</p>
-                    </div>
-                </div>
-                <div class="goal-card fade-up">
-                    <div class="goal-status">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-                    </div>
-                    <div class="goal-info">
-                        <h3>Build an Indie Game — 1000 Downloads</h3>
-                        <p>Design, develop, and publish a polished indie game. Target: at least 1,000 downloads on itch.io.</p>
-                    </div>
-                </div>
-                <div class="goal-card fade-up">
-                    <div class="goal-status">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-                    </div>
-                    <div class="goal-info">
-                        <h3>BITSAT Prep — Concepts & Mock Tests</h3>
-                        <p>Finish all core BITSAT concepts and start doing mock tests regularly to build exam readiness.</p>
-                    </div>
-                </div>
-                <div class="goal-card fade-up">
-                    <div class="goal-status">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-                    </div>
-                    <div class="goal-info">
-                        <h3>Learn Color Theory, Ratios & Composition</h3>
-                        <p>Level up my design skills — understand the theory behind why good designs look good.</p>
-                    </div>
-                </div>
-                <div class="goal-card fade-up">
-                    <div class="goal-status">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-                    </div>
-                    <div class="goal-info">
-                        <h3>Learn Spanish</h3>
-                        <p>Pick up a new language — broaden my horizons beyond code and design.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ========== GITHUB ACTIVITY ========== -->
-    <section class="section" id="github">
-        <div class="container">
-            <h2 class="section-title fade-up">
-                <span class="section-number">07.</span> GitHub Activity
-            </h2>
-            <p class="section-subtitle fade-up">Proof that I actually code — not just list skills.</p>
-            <div class="github-grid fade-up">
-                <!-- Left: Profile Card -->
-                <div class="github-card github-profile-card">
-                    <div class="github-avatar">
-                        <img src="https://github.com/Vaidik-Kohli.png" alt="Vaidik-Kohli" loading="lazy">
-                    </div>
-                    <h3>Vaidik-Kohli</h3>
-                    <p class="github-bio">Student | Developer | Designer<br>Building things from scratch.</p>
-                    <a href="https://github.com/Vaidik-Kohli" target="_blank" rel="noopener noreferrer" class="btn btn-outline github-btn">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-                        View Profile
-                    </a>
-                </div>
-                <!-- Right: Repositories -->
-                <div class="github-card github-repos-card">
-                    <h4 class="github-card-title">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
-                        Repositories
-                    </h4>
-                    <div class="github-repos-list">
-                        <a href="https://github.com/Vaidik-Kohli/slot-machine-game" target="_blank" rel="noopener noreferrer" class="github-repo-item">
-                            <div class="repo-header">
-                                <span class="repo-name">slot-machine-game</span>
-                                <span class="repo-lang"><span class="lang-dot python"></span>Python</span>
-                            </div>
-                            <p class="repo-desc">Feature-rich graphical slot machine game with Pygame</p>
-                        </a>
-                        <a href="https://github.com/Vaidik-Kohli/Portfolio" target="_blank" rel="noopener noreferrer" class="github-repo-item">
-                            <div class="repo-header">
-                                <span class="repo-name">Portfolio</span>
-                                <span class="repo-lang"><span class="lang-dot html"></span>HTML</span>
-                            </div>
-                            <p class="repo-desc">Personal portfolio website — dark theme, responsive, animated</p>
-                        </a>
-                    </div>
-                </div>
-                <!-- Bottom: Contribution Graph (spans full width) -->
-                <div class="github-card github-graph-card">
-                    <h4 class="github-card-title">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
-                        Contribution Graph '26
-                    </h4>
-                    <div class="github-contribution-graph">
-                        <img src="https://ghchart.rshah.org/6366f1/Vaidik-Kohli" alt="Vaidik-Kohli's GitHub Contribution Graph" loading="lazy">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-        <!-- ========== BLOG ========== -->
-    <section class="section section-alt" id="blog">
-        <div class="container">
-            <h2 class="section-title fade-up">
-                <span class="section-number">08.</span> Blog
-            </h2>
-            <p class="section-subtitle fade-up">Thoughts, learnings, and stories.</p>
-            <div class="blog-grid">
-                <article class="blog-card fade-up">
-                    <div class="blog-date">
-                        <span class="blog-day">09</span>
-                        <span class="blog-month">Mar</span>
-                    </div>
-                    <div class="blog-content">
-                        <h3 class="blog-title">My Journey Into Web Development</h3>
-                        <p class="blog-excerpt">
-                            How I started learning to code, the resources I used, and what I've learned
-                            along the way as a 16-year-old self-taught developer...
-                        </p>
-                        <a href="blog/my-journey-into-web-development.html" class="blog-read-more">
-                            Read More
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-                        </a>
-                    </div>
-                </article>
-                <article class="blog-card fade-up">
-                    <div class="blog-date">
-                        <span class="blog-day">01</span>
-                        <span class="blog-month">Mar</span>
-                    </div>
-                    <div class="blog-content">
-                        <h3 class="blog-title">Design Tips for Developer Portfolios</h3>
-                        <p class="blog-excerpt">
-                            What I learned about making a portfolio that stands out — from color theory
-                            and typography to layout and user experience...
-                        </p>
-                        <a href="blog/design-tips-for-developer-portfolios.html" class="blog-read-more">
-                            Read More
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-                        </a>
-                    </div>
-                </article>
-                <article class="blog-card fade-up">
-                    <div class="blog-date">
-                        <span class="blog-day">15</span>
-                        <span class="blog-month">Feb</span>
-                    </div>
-                    <div class="blog-content">
-                        <h3 class="blog-title">Preparing for BITS Pilani — My Strategy</h3>
-                        <p class="blog-excerpt">
-                            Balancing coding, freelancing, and exam preparation — here's how I'm
-                            planning my roadmap for BITSAT and beyond...
-                        </p>
-                        <a href="blog/preparing-for-bits-pilani.html" class="blog-read-more">
-                            Read More
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-                        </a>
-                    </div>
-                </article>
-            </div>
-            <div class="blog-view-all fade-up">
-                <a href="blog.html" class="btn btn-outline">
-                    View All Posts
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- ========== LET'S COLLABORATE ========== -->
-    <section class="section" id="contact">
-        <div class="container">
-            <h2 class="section-title fade-up">
-                <span class="section-number">09.</span> Let's Collaborate
-            </h2>
-            <div class="contact-content">
-                <div class="contact-text fade-up">
-                    <p>
-                        I'm looking for people to build things with — whether it's a game dev project, 
-                        a website for a cool idea, or just a coding buddy to learn alongside. If you're a 
-                        student, developer, designer, or just someone who likes making stuff, let's talk.
-                    </p>
-                    <p>
-                        I'm also open to <strong>freelance work</strong>, <strong>study groups</strong>, 
-                        and conversations about tech, design, or anything creative. Drop me a message — 
-                        I reply to everything.
-                    </p>
+                    <p>If you want to talk about a project, game idea, or web build, send me a message.</p>
                     <div class="contact-links">
-                        <a href="mailto:vaidikaru2323@gmail.com" class="contact-item">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                            vaidikaru2323@gmail.com
-                        </a>
-                        <a href="https://github.com/Vaidik-Kohli" target="_blank" rel="noopener noreferrer" class="contact-item">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-                            Vaidik-Kohli
-                        </a>
-                        <a href="https://instagram.com/vaidikkohli9" target="_blank" rel="noopener noreferrer" class="contact-item">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-                            @vaidikkohli9
-                        </a>
+                        <a href="mailto:vaidikaru2323@gmail.com">vaidikaru2323@gmail.com</a>
+                        <a href="https://github.com/Vaidik-Kohli" target="_blank" rel="noopener noreferrer">github.com/Vaidik-Kohli</a>
+                        <a href="https://instagram.com/vaidikkohli9" target="_blank" rel="noopener noreferrer">instagram.com/vaidikkohli9</a>
                     </div>
                 </div>
-                <form class="contact-form fade-up" id="contactForm" action="https://formsubmit.co/ajax/vaidikaru2323@gmail.com" method="POST">
-                    <input type="hidden" name="_subject" value="New Portfolio Contact!">
-                    <input type="hidden" name="_captcha" value="false">
-                    <input type="hidden" name="_template" value="table">
-                    <input type="text" name="_honey" style="display:none">
-                    <div class="form-group">
+                <form aria-label="Contact form">
+                    <div class="field">
                         <label for="name">Name</label>
-                        <input type="text" id="name" name="name" placeholder="Your name" required>
+                        <input id="name" name="name" type="text" placeholder="Your name" required>
                     </div>
-                    <div class="form-group">
+                    <div class="field">
                         <label for="email">Email</label>
-                        <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                        <input id="email" name="email" type="email" placeholder="you@example.com" required>
                     </div>
-                    <div class="form-group">
+                    <div class="field">
                         <label for="message">Message</label>
-                        <textarea id="message" name="message" rows="5" placeholder="What's on your mind?" required></textarea>
+                        <textarea id="message" name="message" placeholder="Write your message" required></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary btn-submit">
-                        Send Message
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-                    </button>
+                    <button type="submit" class="send">Send</button>
                 </form>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <!-- ========== FOOTER ========== -->
-    <footer class="footer">
+    <footer class="site-footer">
         <div class="container">
-            <p class="footer-text">
-                Designed & Built by <strong>Vaidik</strong> &copy; 2026
-            </p>
-            <div class="footer-socials">
-                <a href="https://github.com/Vaidik-Kohli" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-                </a>
-                <a href="https://instagram.com/vaidikkohli9" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-                </a>
-                <a href="mailto:vaidikaru2323@gmail.com" aria-label="Email">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                </a>
-            </div>
+            <p>Built by Vaidik</p>
+            <p><a href="https://vaidik-kohli.github.io/assets/resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a></p>
         </div>
     </footer>
 
-    <!-- JavaScript -->
-    <script src="script.js"></script>
+    <script>
+        const navLinks = Array.from(document.querySelectorAll('.nav-links a[href^="#"]'));
+        const sections = navLinks
+            .map((link) => document.querySelector(link.getAttribute('href')))
+            .filter(Boolean);
+
+        const setActiveLink = () => {
+            const position = window.scrollY + window.innerHeight * 0.3;
+            let currentId = '';
+
+            sections.forEach((section) => {
+                if (position >= section.offsetTop) {
+                    currentId = section.id;
+                }
+            });
+
+            navLinks.forEach((link) => {
+                const target = link.getAttribute('href').replace('#', '');
+                link.classList.toggle('active', target === currentId);
+            });
+        };
+
+        window.addEventListener('scroll', setActiveLink, { passive: true });
+        window.addEventListener('load', setActiveLink);
+
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('show');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            },
+            { threshold: 0.14, rootMargin: '0px 0px -8% 0px' }
+        );
+
+        document.querySelectorAll('.fade').forEach((section) => observer.observe(section));
+
+        const form = document.querySelector('form');
+        form.addEventListener('submit', (event) => {
+            event.preventDefault();
+            form.reset();
+        });
+    </script>
 </body>
 </html>
