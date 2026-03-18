@@ -226,7 +226,7 @@ section {
    ===================================== */
 
 .hero {
-    min-height: min(86vh, 760px);
+    min-height: min(70vh, 640px);
     display: grid;
     align-items: center;
     border-bottom: 1px solid color-mix(in srgb, var(--line) 70%, transparent);
