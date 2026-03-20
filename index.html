@@ -1,223 +1,250 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vaidik | Portfolio</title>
-    <meta name="description" content="Vaidik is a 16-year-old developer from Amritsar, India, building Python and web projects from scratch.">
-    <meta name="author" content="Vaidik">
-    <meta property="og:title" content="Vaidik | Portfolio">
-    <meta property="og:description" content="Personal portfolio of Vaidik from Amritsar, India.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://vaidik-kohli.github.io/">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vaidik | Portfolio</title>
+  <meta name="description" content="Vaidik is a 16-year-old developer from Amritsar, India, building Python and web projects from scratch.">
+  <meta name="author" content="Vaidik">
+  <meta property="og:title" content="Vaidik | Portfolio">
+  <meta property="og:description" content="Personal portfolio of Vaidik from Amritsar, India.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://vaidik-kohli.github.io/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header class="site-header">
-        <div class="container nav-wrap">
-            <div class="hero-identity">
-                <span class="hero-name">Vaidik</span>
-                <span class="hero-role">Developer · Designer · Amritsar</span>
-            </div>
-            <nav aria-label="Primary">
-                <ul class="nav-links">
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#blog">Blog</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <li><a href="https://vaidik-kohli.github.io/assets/resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a></li>
-                </ul>
-            </nav>
+
+<header class="site-header">
+  <div class="container nav-wrap">
+    <div class="hero-identity">
+      <span class="hero-name">Vaidik</span>
+      <span class="hero-role">Developer · Designer · Amritsar</span>
+    </div>
+    <nav aria-label="Primary">
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="https://vaidik-kohli.github.io/assets/resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="hero-parallax-layer"></div>
+    <div class="container hero-inner fade">
+      <div class="hero-top-row">
+        <div class="hero-identity-mobile">
+          <span class="hero-name">Vaidik</span>
+          <span class="hero-role">Developer · Designer · Amritsar</span>
         </div>
-    </header>
-
-    <main id="top">
-        <section class="hero">
-            <div class="hero-parallax-layer"></div>
-            <div class="container hero-inner fade">
-                <div class="hero-top-row">
-                    <div class="hero-identity-mobile">
-                        <span class="hero-name">Vaidik</span>
-                        <span class="hero-role">Developer · Designer · Amritsar</span>
-                    </div>
-                </div>
-                <div class="hero-display-wrap">
-                    <div class="hero-text">
-                        <h1 class="hero-display">Vaidik.</h1>
-                        <p class="hero-line">Building things that feel alive — from game mechanics in Python to pages that read like a person made them.</p>
-                    </div>
-                    <img
-                        src="https://github.com/Vaidik-Kohli.png"
-                        alt="Vaidik"
-                        class="hero-avatar"
-                        loading="eager"
-                    >
-                </div>
-                <div class="hero-bottom-row">
-                    <span class="hero-location">AMRITSAR, INDIA</span>
-                    <span class="hero-scroll-indicator">
-                        <span class="scroll-label">scroll</span>
-                        <span class="scroll-line"></span>
-                    </span>
-                </div>
-            </div>
-        </section>
-
-        <section id="about" class="fade section-panel">
-            <div class="container about-grid">
-                <div class="section-head">
-                    <span class="section-number">01</span>
-                    <h2>About</h2>
-                </div>
-                <div class="about-copy">
-                    <p>I started with Python because I wanted to make something that moved on screen, not just print lines in a console. That led me into Pygame, then into web work when I wanted a place to document what I was building.</p>
-                    <p>Most of what I know comes from trial and error. I read docs, test ideas, and keep notes when a bad decision teaches me something useful. That habit helped me move faster than I expected.</p>
-                    <p>Outside code, I spend time on cricket, photography, and games. Those three shape how I think about timing, composition, and feedback loops in projects.</p>
-                    <ul class="about-facts-inline">
-                        <li>BITS Goa CSE '28</li>
-                        <li>Studying</li>
-                        <li>16</li>
-                        <li>Amritsar</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <section id="projects" class="fade section-panel">
-            <div class="container">
-                <div class="section-head">
-                    <span class="section-number">02</span>
-                    <h2>Projects</h2>
-                    <p>Two builds that took real iteration, not one-night prototypes.</p>
-                </div>
-                <div class="projects-wrap">
-                    <article class="project">
-                        <div class="project-title-row">
-                            <h3>Slot Machine Game</h3>
-                            <span class="stack">Python • Pygame</span>
-                        </div>
-                        <p>I made this to learn game architecture in a way tutorials never forced me to. The game has four risk levels, a jackpot system, 12 achievements, an aura mechanic, particle bursts, and sound cues that match the pace of each spin.</p>
-                        <p>The hard part was balancing reward and frustration so it felt fair. I rewrote parts of the random logic and state handling a few times before it stopped feeling noisy and started feeling intentional.</p>
-                        <div class="project-links">
-                            <a class="link-btn" href="https://github.com/Vaidik-Kohli/slot-machine-game" target="_blank" rel="noopener noreferrer">View Code</a>
-                        </div>
-                    </article>
-
-                    <article class="project">
-                        <div class="project-title-row">
-                            <h3>Portfolio Website</h3>
-                            <span class="stack">HTML • CSS • JavaScript</span>
-                        </div>
-                        <p>This site started as a simple page and got rebuilt when I realized it looked generic. I rebuilt the structure, tightened the spacing, and treated copy like product content instead of filler.</p>
-                        <p>Under the surface, I kept it clean and lightweight: responsive layout, smooth navigation, section reveal effects, and a blog setup that is easy to extend without adding a framework.</p>
-                        <div class="project-links">
-                            <a class="link-btn" href="https://github.com/Vaidik-Kohli/Portfolio" target="_blank" rel="noopener noreferrer">View Code</a>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section id="github" class="fade section-panel">
-            <div class="container">
-                <div class="section-head">
-                    <span class="section-number">03</span>
-                    <h2>GitHub Activity</h2>
-                    <p>Public work and commit history.</p>
-                </div>
-                <div class="github-grid">
-                    <div class="github-card">
-                        <h3>Vaidik-Kohli</h3>
-                        <p>I push code often, then clean it after I see what breaks. You can find all project repositories and updates on my profile.</p>
-                        <a class="link-btn" href="https://github.com/Vaidik-Kohli" target="_blank" rel="noopener noreferrer">Open GitHub Profile</a>
-                    </div>
-                    <div class="graph-wrap">
-                        <img src="https://ghchart.rshah.org/Vaidik-Kohli" alt="GitHub contribution graph for Vaidik-Kohli" loading="lazy">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="blog" class="fade section-panel">
-            <div class="container">
-                <div class="section-head">
-                    <span class="section-number">04</span>
-                    <h2>Blog</h2>
-                    <p>Notes from what I build and how I think through decisions.</p>
-                </div>
-                <div class="blog-list">
-                    <article class="blog-item">
-                        <p class="blog-date">March 9, 2026</p>
-                        <div>
-                            <h3>My Journey Into Web Development</h3>
-                            <p>How I moved from simple Python scripts to front-end work, what helped, what wasted time, and what I would do first if I had to restart from zero.</p>
-                            <a class="read-link" href="https://vaidik-kohli.github.io/blog/my-journey-into-web-development.html" target="_blank" rel="noopener noreferrer">Read post</a>
-                        </div>
-                    </article>
-                    <article class="blog-item">
-                        <p class="blog-date">March 1, 2026</p>
-                        <div>
-                            <h3>Design Tips for Developer Portfolios</h3>
-                            <p>The layout and writing choices that make a portfolio easier to trust, plus mistakes I made in my own first version.</p>
-                            <a class="read-link" href="https://vaidik-kohli.github.io/blog/design-tips-for-developer-portfolios.html" target="_blank" rel="noopener noreferrer">Read post</a>
-                        </div>
-                    </article>
-                    <article class="blog-item">
-                        <p class="blog-date">February 15, 2026</p>
-                        <div>
-                            <h3>Preparing for BITS Pilani, My Strategy</h3>
-                            <p>How I split time between coding and exam prep, the study plan that works for me, and where I cut distractions.</p>
-                            <a class="read-link" href="https://vaidik-kohli.github.io/blog/preparing-for-bits-pilani.html" target="_blank" rel="noopener noreferrer">Read post</a>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="fade section-panel">
-            <div class="container contact-grid">
-                <div class="section-head">
-                    <span class="section-number">05</span>
-                    <h2>Contact</h2>
-                </div>
-                <div class="contact-copy">
-                    <p>If you want to talk about a project, game idea, or web build, send me a message.</p>
-                    <div class="contact-links">
-                        <a href="mailto:vaidikaru2323@gmail.com">vaidikaru2323@gmail.com</a>
-                        <a href="https://github.com/Vaidik-Kohli" target="_blank" rel="noopener noreferrer">github.com/Vaidik-Kohli</a>
-                        <a href="https://instagram.com/vaidikkohli9" target="_blank" rel="noopener noreferrer">instagram.com/vaidikkohli9</a>
-                    </div>
-                </div>
-                <form aria-label="Contact form">
-                    <div class="field">
-                        <label for="name">Name</label>
-                        <input id="name" name="name" type="text" placeholder="Your name" required>
-                    </div>
-                    <div class="field">
-                        <label for="email">Email</label>
-                        <input id="email" name="email" type="email" placeholder="you@example.com" required>
-                    </div>
-                    <div class="field">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" placeholder="Write your message" required></textarea>
-                    </div>
-                    <button type="submit" class="send">Send</button>
-                </form>
-            </div>
-        </section>
-    </main>
-
-    <footer class="site-footer">
-        <div class="container">
-            <p>Built by Vaidik</p>
-            <p><a href="https://vaidik-kohli.github.io/assets/resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a></p>
+      </div>
+      <div class="hero-display-wrap">
+        <div class="hero-text">
+          <h1 class="hero-display">Vaidik.</h1>
+          <p class="hero-line">Building things that feel alive. Game mechanics in Python, pages written like a person made them.</p>
         </div>
-    </footer>
+        <img
+          src="https://github.com/Vaidik-Kohli.png"
+          alt="Vaidik"
+          class="hero-avatar"
+          loading="eager"
+        >
+      </div>
+      <div class="hero-bottom-row">
+        <span class="hero-location">AMRITSAR, INDIA</span>
+        <span class="hero-scroll-indicator">
+          <span class="scroll-label">scroll</span>
+          <span class="scroll-line"></span>
+        </span>
+      </div>
+    </div>
+  </section>
 
-    <script src="script.js"></script>
+  <section id="about" class="fade section-panel">
+    <div class="container about-grid">
+      <div class="section-head">
+        <span class="section-number">01</span>
+        <h2>About</h2>
+      </div>
+      <div class="about-copy">
+        <p>I started with Python because I wanted to make something move on screen, not just print lines in a console. That led me into Pygame, then into web work when I needed somewhere to document what I was building.</p>
+        <p>Most of what I know came from breaking things. I read docs, test ideas, and write down what a bad decision taught me. That habit moved me faster than any course did.</p>
+        <p>Cricket, photography, and games take up most of my time outside code. All three teach you something about pacing and feedback — turns out that transfers.</p>
+        <ul class="about-facts-inline">
+          <li>Targeting BITS Goa CSE</li>
+          <li>Class 11</li>
+          <li>16</li>
+          <li>Amritsar</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" class="fade section-panel">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-number">02</span>
+        <h2>Skills</h2>
+        <p>What I actually use, not a keyword list.</p>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-item">
+          <span class="skill-name">Python</span>
+          <span class="skill-detail">Scripting, Pygame, CLI tools</span>
+        </div>
+        <div class="skill-item">
+          <span class="skill-name">HTML + CSS</span>
+          <span class="skill-detail">Semantic markup, responsive layouts, custom design</span>
+        </div>
+        <div class="skill-item">
+          <span class="skill-name">Git / GitHub</span>
+          <span class="skill-detail">Version control, branching, GitHub Pages</span>
+        </div>
+        <div class="skill-item">
+          <span class="skill-name">Anthropic API</span>
+          <span class="skill-detail">Claude integration, prompt engineering, AI-powered apps</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="fade section-panel">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-number">03</span>
+        <h2>Projects</h2>
+        <p>Built from scratch, not from templates.</p>
+      </div>
+      <div class="projects-wrap">
+        <article class="project">
+          <div class="project-title-row">
+            <h3>Portfolio Website</h3>
+            <span class="stack">HTML · CSS · JavaScript</span>
+          </div>
+          <p>Started as a throwaway page. I rebuilt it from scratch once I realized how much generic template aesthetics were doing — wrong fonts, bloated structure, copy that sounded like a LinkedIn bio. The second version treats layout like a design decision and copy like product writing.</p>
+          <p>Responsive layout, scroll-based section reveals, a blog system that doesn't need a framework to extend. Lightweight on purpose.</p>
+          <div class="project-links">
+            <a class="link-btn" href="https://github.com/Vaidik-Kohli/vaidik-kohli.github.io" target="_blank" rel="noopener noreferrer">View Code</a>
+            <a class="link-btn" href="https://vaidik-kohli.github.io" target="_blank" rel="noopener noreferrer">Live Site</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="github" class="fade section-panel">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-number">04</span>
+        <h2>GitHub Activity</h2>
+        <p>Public work and commit history.</p>
+      </div>
+      <div class="github-grid">
+        <div class="github-card">
+          <h3>Vaidik-Kohli</h3>
+          <p>I push code often, then clean it after I see what breaks. All project repositories and updates are on my profile.</p>
+          <a class="link-btn" href="https://github.com/Vaidik-Kohli" target="_blank" rel="noopener noreferrer">Open GitHub Profile</a>
+        </div>
+        <div class="graph-wrap">
+          <img src="https://ghchart.rshah.org/Vaidik-Kohli" alt="GitHub contribution graph for Vaidik-Kohli" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="blog" class="fade section-panel">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-number">05</span>
+        <h2>Blog</h2>
+        <p>Notes from what I build and how I think through decisions.</p>
+      </div>
+      <div class="blog-list">
+        <article class="blog-item">
+          <p class="blog-date">March 9, 2026</p>
+          <div>
+            <h3>My Journey Into Web Development</h3>
+            <p>How I moved from simple Python scripts to front-end work, what helped, what wasted time, and what I would do first if I had to restart from zero.</p>
+            <a class="read-link" href="https://vaidik-kohli.github.io/blog/my-journey-into-web-development.html" target="_blank" rel="noopener noreferrer">Read post</a>
+          </div>
+        </article>
+        <article class="blog-item">
+          <p class="blog-date">March 1, 2026</p>
+          <div>
+            <h3>Design Tips for Developer Portfolios</h3>
+            <p>The layout and writing choices that make a portfolio easier to trust, plus mistakes I made in my own first version.</p>
+            <a class="read-link" href="https://vaidik-kohli.github.io/blog/design-tips-for-developer-portfolios.html" target="_blank" rel="noopener noreferrer">Read post</a>
+          </div>
+        </article>
+        <article class="blog-item">
+          <p class="blog-date">February 15, 2026</p>
+          <div>
+            <h3>Preparing for BITS Pilani, My Strategy</h3>
+            <p>How I split time between coding and exam prep, the study plan that works for me, and where I cut distractions.</p>
+            <a class="read-link" href="https://vaidik-kohli.github.io/blog/preparing-for-bits-pilani.html" target="_blank" rel="noopener noreferrer">Read post</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="fade section-panel">
+    <div class="container contact-grid">
+      <div class="section-head">
+        <span class="section-number">06</span>
+        <h2>Contact</h2>
+      </div>
+      <div class="contact-copy">
+        <p>If you want to talk about a project, collaboration, or just have a question, send me a message.</p>
+        <div class="contact-links">
+          <a href="mailto:vaidikaru2323@gmail.com">vaidikaru2323@gmail.com</a>
+          <a href="https://github.com/Vaidik-Kohli" target="_blank" rel="noopener noreferrer">github.com/Vaidik-Kohli</a>
+          <a href="https://instagram.com/vaidikkohli9" target="_blank" rel="noopener noreferrer">instagram.com/vaidikkohli9</a>
+        </div>
+      </div>
+      <form
+        action="https://api.web3forms.com/submit"
+        method="POST"
+        aria-label="Contact form"
+      >
+        <input type="hidden" name="access_key" value="1643e9c8-086f-4a5a-bccc-9d799a2c8c0c">
+        <input type="hidden" name="subject" value="New message from portfolio">
+        <input type="hidden" name="redirect" value="false">
+        <div class="field">
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" placeholder="Your name" required>
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="you@example.com" required>
+        </div>
+        <div class="field">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="Write your message" required></textarea>
+        </div>
+        <button type="submit" class="send">Send</button>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>Built by Vaidik</p>
+    <p><a href="https://vaidik-kohli.github.io/assets/resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a></p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
