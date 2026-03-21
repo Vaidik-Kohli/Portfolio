@@ -1,303 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog — Vaidik</title>
-    <meta name="description" content="Notes on building, designing, and learning — by Vaidik, a developer from Amritsar, India.">
-    <meta name="author" content="Vaidik">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog — Vaidik</title>
+  <meta name="description" content="Notes on building, designing, and learning — by Vaidik, a developer from Amritsar, India.">
+  <meta name="author" content="Vaidik">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-
-    <style>
-        /* Blog-page-specific styles — shared base comes from styles.css */
-
-        .blog-page-hero {
-            padding: clamp(4rem, 7vw, 6rem) 0 clamp(2.5rem, 4vw, 3.5rem);
-            border-bottom: 1px solid color-mix(in srgb, var(--line) 75%, transparent);
-        }
-
-        .back-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.4rem;
-            color: var(--muted);
-            font-size: 0.88rem;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-            margin-bottom: 1.4rem;
-            transition: color 150ms ease;
-        }
-
-        .back-link:hover {
-            color: var(--accent);
-        }
-
-        .back-link svg {
-            flex-shrink: 0;
-        }
-
-        .blog-page-title {
-            font-size: clamp(2.8rem, 7vw, 5.5rem);
-            margin-bottom: 0.55rem;
-        }
-
-        .blog-page-subtitle {
-            color: var(--muted);
-            max-width: 52ch;
-            font-size: 1rem;
-        }
-
-        /* Blog listing */
-
-        .blog-listing {
-            padding: clamp(3.5rem, 6vw, 5.5rem) 0;
-        }
-
-        /* Featured post */
-
-        .blog-featured {
-            border: 1px solid var(--line);
-            border-left: 3px solid var(--accent);
-            border-radius: var(--radius);
-            background: color-mix(in srgb, var(--surface) 94%, #000 6%);
-            padding: clamp(1.2rem, 3vw, 2rem);
-            margin-bottom: 2.8rem;
-            transition: transform 200ms ease, box-shadow 200ms ease;
-        }
-
-        .blog-featured:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 14px 32px color-mix(in srgb, var(--accent) 12%, transparent);
-        }
-
-        .featured-label {
-            display: inline-block;
-            font-size: 0.78rem;
-            font-weight: 700;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            color: var(--accent);
-            margin-bottom: 0.8rem;
-        }
-
-        .blog-meta {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--muted);
-            font-size: 0.84rem;
-            margin-bottom: 0.6rem;
-        }
-
-        .blog-meta-sep {
-            opacity: 0.5;
-        }
-
-        .blog-featured-title {
-            font-size: clamp(1.8rem, 3.5vw, 2.8rem);
-            margin-bottom: 0.75rem;
-            transition: color 150ms ease;
-        }
-
-        .blog-featured-title a {
-            color: var(--text);
-        }
-
-        .blog-featured:hover .blog-featured-title a {
-            color: var(--accent);
-        }
-
-        .blog-featured-excerpt {
-            color: #ddd3be;
-            max-width: 68ch;
-            margin-bottom: 1.1rem;
-        }
-
-        .blog-read-more {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.4rem;
-            color: #ecdcc4;
-            border-bottom: 1px solid color-mix(in srgb, var(--accent) 55%, transparent);
-            font-size: 0.92rem;
-            transition: color 150ms ease, border-color 150ms ease;
-        }
-
-        .blog-read-more:hover {
-            color: var(--accent);
-            border-color: var(--accent);
-        }
-
-        /* All posts grid */
-
-        .all-posts-heading {
-            font-family: "Manrope", sans-serif;
-            font-size: 0.82rem;
-            font-weight: 700;
-            letter-spacing: 0.14em;
-            text-transform: uppercase;
-            color: var(--muted);
-            margin-bottom: 1.2rem;
-        }
-
-        .posts-grid {
-            display: grid;
-            gap: 1rem;
-        }
-
-        .post-card {
-            display: grid;
-            grid-template-columns: 160px minmax(0, 1fr);
-            gap: 1rem;
-            border: 1px solid var(--line);
-            border-radius: var(--radius);
-            background: color-mix(in srgb, var(--surface) 94%, #000 6%);
-            padding: 1.1rem;
-            transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease;
-        }
-
-        .post-card:hover {
-            transform: translateY(-3px);
-            border-color: color-mix(in srgb, var(--accent) 35%, var(--line));
-            box-shadow: 0 10px 28px color-mix(in srgb, var(--accent) 10%, transparent);
-        }
-
-        .post-date {
-            color: var(--accent);
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            font-size: 0.8rem;
-            font-weight: 700;
-            align-self: start;
-            padding-top: 0.2rem;
-        }
-
-        .post-card h3 {
-            font-size: clamp(1.3rem, 2vw, 1.75rem);
-            margin-bottom: 0.4rem;
-            transition: color 150ms ease;
-        }
-
-        .post-card:hover h3 {
-            color: var(--accent);
-        }
-
-        .post-card p {
-            color: #ddd0bc;
-            font-size: 0.95rem;
-            margin-bottom: 0.7rem;
-        }
-
-        @media (max-width: 680px) {
-            .post-card {
-                grid-template-columns: 1fr;
-                gap: 0.3rem;
-            }
-
-            .post-date {
-                font-size: 0.75rem;
-            }
-        }
-    </style>
+  <link href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+<div id="cursor-glow" aria-hidden="true"></div>
 
-    <header class="site-header">
-        <div class="container nav-wrap">
-            <a class="brand" href="index.html">Vaidik</a>
-            <nav aria-label="Primary">
-                <ul class="nav-links">
-                    <li><a href="index.html#about">About</a></li>
-                    <li><a href="index.html#projects">Projects</a></li>
-                    <li><a href="blog.html" class="active">Blog</a></li>
-                    <li><a href="index.html#contact">Contact</a></li>
-                    <li><a href="https://vaidik-kohli.github.io/assets/resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a></li>
-                </ul>
-            </nav>
+<header class="site-header">
+  <div class="container nav-wrap">
+    <div class="hero-identity">
+      <span class="hero-name">Vaidik</span>
+      <span class="hero-role">Developer · Designer · Amritsar</span>
+    </div>
+    <nav aria-label="Primary">
+      <ul class="nav-links">
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#projects">Projects</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+        <li><a href="assets/resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="blog-index">
+
+  <!-- Hero -->
+  <section class="blog-index-hero">
+    <div class="container">
+      <a href="index.html" class="back-link">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        Back to portfolio
+      </a>
+      <h1 class="blog-index-title">Blog</h1>
+      <p class="blog-index-subtitle">Notes from what I build and how I think through decisions.</p>
+    </div>
+  </section>
+
+  <!-- Posts -->
+  <section class="blog-index-listing">
+    <div class="container">
+
+      <!-- Featured -->
+      <article class="blog-featured-card">
+        <span class="blog-featured-label">Latest</span>
+        <div class="blog-post-meta">
+          <time datetime="2026-03-09">March 9, 2026</time>
+          <span class="blog-meta-sep">&bull;</span>
+          <span>5 min read</span>
         </div>
-    </header>
+        <h2 class="blog-featured-heading">
+          <a href="blog/my-journey-into-web-development.html">I Stopped Following Tutorials and Just Started Breaking Things</a>
+        </h2>
+        <p class="blog-featured-excerpt">How I moved from copying Python scripts line by line to actually understanding what I was writing — and why the turning point was deleting the undo history.</p>
+        <a class="read-link" href="blog/my-journey-into-web-development.html">Read post →</a>
+      </article>
 
-    <main>
-        <section class="blog-page-hero">
-            <div class="container">
-                <a href="index.html" class="back-link reveal">
-                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
-                    Back to portfolio
-                </a>
-                <h1 class="blog-page-title reveal">Blog</h1>
-                <p class="blog-page-subtitle reveal">Notes from what I build and how I think through decisions.</p>
-            </div>
-        </section>
+      <!-- All posts -->
+      <p class="all-posts-label">All posts</p>
 
-        <section class="blog-listing">
-            <div class="container">
+      <div class="blog-list">
 
-                <article class="blog-featured reveal">
-                    <span class="featured-label">Latest</span>
-                    <div class="blog-meta">
-                        <time datetime="2026-03-09">March 9, 2026</time>
-                        <span class="blog-meta-sep">·</span>
-                        <span>5 min read</span>
-                    </div>
-                    <h2 class="blog-featured-title">
-                        <a href="blog/my-journey-into-web-development.html">My Journey Into Web Development</a>
-                    </h2>
-                    <p class="blog-featured-excerpt">
-                        How I moved from simple Python scripts to front-end work, what helped, what wasted time, and what I would do first if I had to restart from zero.
-                    </p>
-                    <a class="blog-read-more" href="blog/my-journey-into-web-development.html">
-                        Read post
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-                    </a>
-                </article>
+        <article class="blog-item">
+          <p class="blog-date">March 9, 2026</p>
+          <div>
+            <h3><a href="blog/my-journey-into-web-development.html">I Stopped Following Tutorials and Just Started Breaking Things</a></h3>
+            <p>How I moved from copying Python scripts line by line to actually understanding what I was writing — and why the turning point was deleting the undo history.</p>
+            <a class="read-link" href="blog/my-journey-into-web-development.html">Read post</a>
+          </div>
+        </article>
 
-                <p class="all-posts-heading reveal">All posts</p>
+        <article class="blog-item">
+          <p class="blog-date">March 1, 2026</p>
+          <div>
+            <h3><a href="blog/design-tips-for-developer-portfolios.html">Your Portfolio Has Great Design and No Projects. That's the Problem.</a></h3>
+            <p>The layout and copy choices that actually make a portfolio trustworthy — and the mistake I made in my first version that no amount of CSS fixes.</p>
+            <a class="read-link" href="blog/design-tips-for-developer-portfolios.html">Read post</a>
+          </div>
+        </article>
 
-                <div class="posts-grid">
+        <article class="blog-item">
+          <p class="blog-date">February 15, 2026</p>
+          <div>
+            <h3><a href="blog/preparing-for-bits-pilani.html">Studying for BITS While Not Completely Abandoning the Code</a></h3>
+            <p>How I split time between exam prep and projects without losing either — the actual schedule, the subject breakdown, and where I cut distractions.</p>
+            <a class="read-link" href="blog/preparing-for-bits-pilani.html">Read post</a>
+          </div>
+        </article>
 
-                    <article class="post-card reveal">
-                        <p class="post-date">Mar 9, 2026</p>
-                        <div>
-                            <h3><a href="blog/my-journey-into-web-development.html">My Journey Into Web Development</a></h3>
-                            <p>How I started learning to code, the resources I used, and what I've learned along the way as a 16-year-old self-taught developer.</p>
-                            <a class="blog-read-more" href="blog/my-journey-into-web-development.html">Read post →</a>
-                        </div>
-                    </article>
+      </div>
+    </div>
+  </section>
 
-                    <article class="post-card reveal">
-                        <p class="post-date">Mar 1, 2026</p>
-                        <div>
-                            <h3><a href="blog/design-tips-for-developer-portfolios.html">Design Tips for Developer Portfolios</a></h3>
-                            <p>The layout and writing choices that make a portfolio easier to trust, plus mistakes I made in my own first version.</p>
-                            <a class="blog-read-more" href="blog/design-tips-for-developer-portfolios.html">Read post →</a>
-                        </div>
-                    </article>
+</main>
 
-                    <article class="post-card reveal">
-                        <p class="post-date">Feb 15, 2026</p>
-                        <div>
-                            <h3><a href="blog/preparing-for-bits-pilani.html">Preparing for BITS Pilani, My Strategy</a></h3>
-                            <p>How I split time between coding and exam prep, the study plan that works for me, and where I cut distractions.</p>
-                            <a class="blog-read-more" href="blog/preparing-for-bits-pilani.html">Read post →</a>
-                        </div>
-                    </article>
+<footer class="site-footer">
+  <div class="container">
+    <p>Built by Vaidik</p>
+    <p><a href="assets/resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a></p>
+  </div>
+</footer>
 
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="site-footer">
-        <div class="container">
-            <p>Built by Vaidik</p>
-            <p><a href="https://vaidik-kohli.github.io/assets/resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a></p>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>

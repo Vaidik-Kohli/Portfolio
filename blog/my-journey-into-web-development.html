@@ -1,157 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Journey Into Web Development — Vaidik</title>
-    <meta name="description" content="How I started learning to code at 16, the resources I used, and what I've learned on my journey as a self-taught developer from Amritsar, India.">
-    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>I Stopped Following Tutorials and Just Started Breaking Things — Vaidik</title>
+  <meta name="description" content="How I moved from copying Python scripts line by line to actually understanding what I was writing — and why the turning point was deleting the undo history.">
+  <link href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
+<div id="cursor-glow" aria-hidden="true"></div>
 
-    <!-- NAVBAR -->
-    <header class="site-header">
-    <div class="container nav-wrap">
-        <a class="brand" href="../index.html">Vaidik</a>
-            <nav aria-label="Primary">
-                <ul class="nav-links">
-                    <li><a href="../index.html#about">About</a></li>
-                    <li><a href="../index.html#projects">Projects</a></li>
-                    <li><a href="../blog.html">Blog</a></li>
-                    <li><a href="../index.html#contact">Contact</a></li>
-                    <li><a href="../assets/resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a></li>
-                </ul>
-            </nav>
-        </div>
+<header class="site-header">
+  <div class="container nav-wrap">
+    <div class="hero-identity">
+      <span class="hero-name">Vaidik</span>
+      <span class="hero-role">Developer · Designer · Amritsar</span>
+    </div>
+    <nav aria-label="Primary">
+      <ul class="nav-links">
+        <li><a href="../index.html#about">About</a></li>
+        <li><a href="../index.html#projects">Projects</a></li>
+        <li><a href="../blog.html">Blog</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+        <li><a href="../assets/resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<article class="blog-post">
+  <div class="container blog-post-container">
+
+    <header class="blog-post-header">
+      <a href="../blog.html" class="back-link">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        All Posts
+      </a>
+      <div class="blog-post-meta">
+        <time datetime="2026-03-09">March 9, 2026</time>
+        <span class="blog-meta-sep">&bull;</span>
+        <span>5 min read</span>
+      </div>
+      <h1 class="blog-post-title">I Stopped Following Tutorials and Just Started Breaking Things</h1>
+      <div class="blog-tags">
+        <span class="blog-tag">Web Dev</span>
+        <span class="blog-tag">Learning</span>
+      </div>
     </header>
 
-    <!-- BLOG POST -->
-    <article class="blog-post">
-        <div class="container blog-post-container">
+    <div class="blog-post-body">
+      <p class="blog-post-lead">
+        Everyone has a different story of how they got into coding. Mine started with curiosity,
+        a lot of YouTube tutorials, and an old laptop that could barely run VS Code. Here's
+        how it all began.
+      </p>
 
-            <header class="blog-post-header fade-up">
-                <a href="../blog.html" class="back-link">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
-                    All Posts
-                </a>
-                <div class="blog-post-meta">
-                    <time datetime="2026-03-09">March 9, 2026</time>
-                    <span class="blog-meta-sep">&bull;</span>
-                    <span>5 min read</span>
-                </div>
-                <h1 class="blog-post-title">My Journey Into Web Development</h1>
-                <div class="blog-tags">
-                    <span class="blog-tag">Web Dev</span>
-                    <span class="blog-tag">Journey</span>
-                    <span class="blog-tag">Learning</span>
-                </div>
-            </header>
+      <h2>The Spark</h2>
+      <p>
+        It all started when I was 14. I saw a friend build a simple website using HTML and CSS,
+        and I was fascinated. The idea that you could type some text into a file and see something
+        appear in a browser felt like magic. I went home that day and googled "how to make a website",
+        and I've been hooked ever since.
+      </p>
+      <p>
+        My first HTML page was hilariously bad — a bright yellow background with Comic Sans text
+        and a bunch of <code>&lt;br&gt;</code> tags instead of proper CSS. But it was mine, and I was proud of it.
+      </p>
 
-            <div class="blog-post-body fade-up">
-                <p class="blog-post-lead">
-                    Everyone has a different story of how they got into coding. Mine started with curiosity,
-                    a lot of YouTube tutorials, and an old laptop that could barely run VS Code. Here's
-                    how it all began.
-                </p>
+      <h2>Finding My Path</h2>
+      <p>
+        After the initial excitement of HTML/CSS, I dove into JavaScript. This is where things got
+        real. Suddenly I wasn't just placing elements on a page — I was making things <em>happen</em>.
+        Click handlers, DOM manipulation, simple animations — each new concept felt like unlocking
+        a superpower.
+      </p>
+      <p>I started with free resources:</p>
+      <ul>
+        <li><strong>freeCodeCamp</strong> — The structured curriculum helped me build a foundation</li>
+        <li><strong>YouTube channels</strong> — Fireship, Traversy Media, and Kevin Powell became my virtual teachers</li>
+        <li><strong>MDN Web Docs</strong> — When I needed to really understand how something worked</li>
+        <li><strong>Building projects</strong> — This is where the real learning happened</li>
+      </ul>
 
-                <h2>The Spark</h2>
-                <p>
-                    It all started when I was 14. I saw a friend build a simple website using HTML and CSS,
-                    and I was fascinated. The idea that you could type some text into a file and see something
-                    appear in a browser felt like magic. I went home that day and googled "how to make a website", 
-                    and I've been hooked ever since.
-                </p>
-                <p>
-                    My first HTML page was hilariously bad — a bright yellow background with Comic Sans text
-                    and a bunch of <code>&lt;br&gt;</code> tags instead of proper CSS. But it was mine, and I was proud of it.
-                </p>
+      <h2>The Design Side</h2>
+      <p>
+        Around the same time, I discovered Figma. As someone who always appreciated aesthetics,
+        design tools felt natural to me. I started experimenting with UI layouts, learned about
+        color theory, typography hierarchies, and spacing systems.
+      </p>
+      <p>
+        This dual interest in both design and development turned out to be my biggest strength.
+        While many developers struggle with making things look good, and many designers struggle
+        with code, I found myself comfortable in both worlds.
+      </p>
 
-                <h2>Finding My Path</h2>
-                <p>
-                    After the initial excitement of HTML/CSS, I dove into JavaScript. This is where things got
-                    real. Suddenly I wasn't just placing elements on a page — I was making things <em>happen</em>.
-                    Click handlers, DOM manipulation, simple animations — each new concept felt like unlocking
-                    a superpower.
-                </p>
-                <p>I started with free resources:</p>
-                <ul>
-                    <li><strong>freeCodeCamp</strong> — The structured curriculum helped me build a foundation</li>
-                    <li><strong>YouTube channels</strong> — Fireship, Traversy Media, and Kevin Powell became my virtual teachers</li>
-                    <li><strong>MDN Web Docs</strong> — When I needed to really understand how something worked</li>
-                    <li><strong>Building projects</strong> — This is where the real learning happened</li>
-                </ul>
+      <blockquote>
+        "The best way to learn to code is to code. The best way to learn design is to design.
+        There are no shortcuts — only consistent practice."
+      </blockquote>
 
-                <h2>The Design Side</h2>
-                <p>
-                    Around the same time, I discovered Figma. As someone who always appreciated aesthetics,
-                    design tools felt natural to me. I started experimenting with UI layouts, learned about
-                    color theory, typography hierarchies, and spacing systems.
-                </p>
-                <p>
-                    This dual interest in both design and development turned out to be my biggest strength.
-                    While many developers struggle with making things look good, and many designers struggle
-                    with code, I found myself comfortable in both worlds.
-                </p>
+      <h2>Where I Am Now</h2>
+      <p>
+        Today, I'm 16 and building things across Python, JavaScript, React, and Godot 4.
+        I'm also preparing for BITS Pilani Goa (CSE), which means balancing academics with
+        my passion for shipping things. It's challenging, but I wouldn't have it any other way.
+      </p>
+      <p>
+        If you're reading this and you're just starting out — my advice is simple: <strong>start
+        building</strong>. Don't wait until you feel ready. You never will. Pick a project,
+        struggle through it, google everything, and finish it. That's how you learn.
+      </p>
+    </div>
 
-                <blockquote>
-                    "The best way to learn to code is to code. The best way to learn design is to design.
-                    There are no shortcuts — only consistent practice."
-                </blockquote>
-
-                <h2>Where I Am Now</h2>
-                <p>
-                    Today, I'm 16 and actively freelancing as a designer and developer. I work with Python,
-                    JavaScript, React, and Node.js on the development side, and Figma, Photoshop, and
-                    Lightroom on the design side.
-                </p>
-                <p>
-                    I'm also preparing for BITS Pilani Goa (CSE 2028), which means balancing academics with
-                    my passion for building things. It's challenging, but I wouldn't have it any other way.
-                </p>
-
-                <h2>What's Next</h2>
-                <p>
-                    I want to dive deeper into full-stack development — specifically building real products
-                    that solve problems. I'm excited about learning databases, APIs, authentication, and
-                    deployment. The goal is to go from "I can build a website" to "I can build a product."
-                </p>
-                <p>
-                    If you're reading this and you're just starting out — my advice is simple: <strong>start
-                    building</strong>. Don't wait until you feel ready. You never will. Just pick a project,
-                    struggle through it, google everything, and finish it. That's how you learn.
-                </p>
-            </div>
-
-            <footer class="blog-post-footer fade-up">
-                <div class="blog-post-author">
-                    <div class="blog-post-author-avatar">V</div>
-                    <div>
-                        <p class="blog-post-author-name">Vaidik</p>
-                        <p class="blog-post-author-bio">Student, Developer, Designer from Amritsar, India</p>
-                    </div>
-                </div>
-                <div class="blog-post-nav">
-                    <a href="design-tips-for-developer-portfolios.html" class="blog-post-nav-next">
-                        <span class="blog-post-nav-label">Next Post</span>
-                        <span class="blog-post-nav-title">Design Tips for Developer Portfolios</span>
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-                    </a>
-                </div>
-            </footer>
+    <footer class="blog-post-footer">
+      <div class="blog-post-author">
+        <div class="blog-post-author-avatar">V</div>
+        <div>
+          <p class="blog-post-author-name">Vaidik</p>
+          <p class="blog-post-author-bio">Student, Developer, Designer from Amritsar, India</p>
         </div>
-    </article>
-
-    <footer class="site-footer">
-        <div class="container">
-            <p>Built by Vaidik</p>
-            <p><a href="../assets/resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a></p>
-        </div>
+      </div>
+      <div class="blog-post-nav">
+        <a href="design-tips-for-developer-portfolios.html" class="blog-post-nav-next">
+          <span class="blog-post-nav-label">Next Post</span>
+          <span class="blog-post-nav-title">Your Portfolio Has Great Design and No Projects. That's the Problem.</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
     </footer>
-    
-    <script src="../script.js"></script>
+
+  </div>
+</article>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>Built by Vaidik</p>
+    <p><a href="../assets/resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a></p>
+  </div>
+</footer>
+
+<script src="../script.js"></script>
 </body>
 </html>
